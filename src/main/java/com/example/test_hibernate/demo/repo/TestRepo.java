@@ -10,4 +10,6 @@ import java.util.List;
 public interface TestRepo extends JpaRepository<Test,Integer> {
     @Override
     List<Test> findAll();
+
+    List<Test>getTestByName(String name);
 }

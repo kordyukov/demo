@@ -1,13 +1,18 @@
 package com.example.test_hibernate.demo.entity;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 @Table(name = "test")
-@Data
+@Getter
+@Setter
+@ToString
 public class Test implements Serializable {
 
         @Id
@@ -19,6 +24,6 @@ public class Test implements Serializable {
         private String name;
 
         @Column(name = "fio")
-        private String Fio;
+        private String fio;
 
 }

@@ -1,15 +1,27 @@
 package com.example.test_hibernate.demo.controler;
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import com.example.test_hibernate.demo.entity.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import service.TestPostgresService;
 
 import java.util.List;
 
 @RestController
 public class TestPostgres {
+
+@Autowired
+private TestPostgresService testPostgresService;
+
+
     @PostMapping("/add")
-    public List<TestPostgres> add(@RequestBody TestPostgres testPostgres){
-        return null;
+    public List<Test> add(@RequestBody Test[] test){
+        return testPostgresService.addToTest(test);
     }
+
+    @GetMapping
+    public List<Test> findName(@RequestParam String name){
+        return testPostgresService.findName(name);
+    }
+
 }
