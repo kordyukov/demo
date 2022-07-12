@@ -22,4 +22,5 @@ public class TestPostgresService {
     public List<Test> findName(String name){
         return testRepo.getTestByName(name);
     }
+
 }
