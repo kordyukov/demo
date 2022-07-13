@@ -44,6 +44,11 @@ private TestRepo testRepo;
 
     }
 
+    @GetMapping("/all")
+    public List<Test>getAll(){
+      return testRepo.findAll();
+    }
+
     @PatchMapping("/update")
     public Test update(@RequestBody Test test){
         return testRepo.save(test);
