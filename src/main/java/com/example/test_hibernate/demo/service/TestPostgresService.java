@@ -1,4 +1,4 @@
-package service;
+package com.example.test_hibernate.demo.service;
 
 import com.example.test_hibernate.demo.entity.Test;
 import com.example.test_hibernate.demo.repo.TestRepo;

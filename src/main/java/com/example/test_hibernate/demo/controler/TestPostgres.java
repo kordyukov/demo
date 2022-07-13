@@ -6,18 +6,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
-import service.TestPostgresService;
+import com.example.test_hibernate.demo.service.TestPostgresService;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
 public class TestPostgres {
-
 @Autowired
 private TestPostgresService testPostgresService;
 @Autowired
 private TestRepo testRepo;
+
 
     @PostMapping("/add")
     public List<Test> add(@RequestBody Test[] test){
