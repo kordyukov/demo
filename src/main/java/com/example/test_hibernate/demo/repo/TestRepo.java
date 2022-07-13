@@ -13,5 +13,5 @@ public interface TestRepo extends JpaRepository<Test,Integer> {
 
     List<Test>getTestByName(String name);
     List<Test>getTestByFioContainsIgnoreCase(String test);
-
+    List<Test> findTestById(int id);
 }

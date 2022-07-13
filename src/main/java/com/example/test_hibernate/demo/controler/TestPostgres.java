@@ -3,7 +3,11 @@ package com.example.test_hibernate.demo.controler;
 import com.example.test_hibernate.demo.entity.Test;
 import com.example.test_hibernate.demo.repo.TestRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestClientResponseException;
+import org.springframework.web.server.ResponseStatusException;
 import service.TestPostgresService;
 
 import java.util.ArrayList;
@@ -37,6 +41,24 @@ private TestRepo testRepo;
         List<Test> list = testRepo.findAll();
 
         return list.stream().map(Test::getId).collect(Collectors.toList());
+
+    }
+
+    @PatchMapping("/update")
+    public Test update(@RequestBody Test test){
+        return testRepo.save(test);
+    }
+    @DeleteMapping("/delete")
+    public void delete(@RequestBody Test test){
+        List<Test> list = testRepo.findTestById(test.getId());
+        System.out.println(list);
+         if (!list.isEmpty()){
+             testRepo.delete(test);
+             throw new ResponseStatusException(HttpStatus.OK, "delete is ok (CODE 200)");
+         }else {
+             throw new ResponseStatusException(HttpStatus.NOT_FOUND, " NOT FOUND RECORD (CODE 404): " + test);
+         }
+
 
     }
 
