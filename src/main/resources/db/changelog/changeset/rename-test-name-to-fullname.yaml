@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: change-column-test
+      author: Denis Kordyukov
+      changes:
+        - renameColumn:
+            tableName: test
+            newColumnName: fullname
+            oldColumnName: name
