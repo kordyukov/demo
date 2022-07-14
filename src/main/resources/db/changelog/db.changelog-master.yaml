@@ -2,4 +2,4 @@ databaseChangeLog: #параметр в котором находятся миг
   - include: # список активных миграций
       file: db/changelog/changeset/create-test-table.yaml # путь к файлу миграции
   - include:
-      file: db/changelog/changeset/rename-test-name-to-fullname.yaml
+      file: db/changelog/changeset/rename-test-fullname-to-name.yaml

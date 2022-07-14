@@ -20,7 +20,7 @@ public class Test implements Serializable {
         @Column(name = "id")
         private int id;
 
-        @Column(name = "fullname")
+        @Column(name = "name")
         private String name;
 
         @Column(name = "fio")

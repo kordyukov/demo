@@ -5,5 +5,5 @@ databaseChangeLog:
       changes:
         - renameColumn:
             tableName: test
-            newColumnName: fullname
-            oldColumnName: name
+            newColumnName: name
+            oldColumnName: fullname
